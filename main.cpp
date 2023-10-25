@@ -1,7 +1,3 @@
-// PLAGUE SIMULATOR
-    // Make that virus spread from one person to another using factors (age, history, randomness, etc.)
-    // Make a way to track and display that spread.
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -50,8 +46,20 @@ class Virus {
         bool favors_bad_history_; // If true, those with poor health history will be more prone to the virus.
 };
 
+void KeyToContinue() {
+    char k;
+    std::cout << "---------------------------\n";
+    std::cout << "Press any key to continue\n";
+    std::cin >> k;
+    system("clear");
+}
+
 int main()
 {
+    // Make that virus spread from one person to another using factors (age, history, randomness, etc.)
+    // Make a way to track and display that spread.
+    // Have multiple different viruses
+
     Population population;
     
     // Humans 0-999 with 100 health, age 5, and no bad history.
@@ -81,10 +89,27 @@ int main()
     std::cout << "PLAGUE SIMULATOR\n";
     std::cout << "Current Population: ";
     std::cout << population.size() << '\n';
+
+    KeyToContinue();
     
-    std::string virus_name;
+    bool quit = false;
     
-    std::cout << "What is the "
+    int choice;
+    
+    while (population.size() != 0 && quit == false) {
+        std::cout << "1. Xelope-402\n";
+        std::cout << "2. Oeurly-013\n";
+        std::cout << "3. Kane-102\n";
+        std::cout << "4. Yerlz-008\n";
+        std::cout << "5. Zanapod-910\n\n\n";
+    
+        std::cout << "Choose a virus to impose on the population (ENTER NUMBER): ";
+        std::cin >> choice;
+        
+        if (choice == 1) {
+            
+        }
+    }
 
     return 0;
 }
