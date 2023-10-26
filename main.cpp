@@ -56,10 +56,6 @@ void KeyToContinue() {
 
 int main()
 {
-    // Make that virus spread from one person to another using factors (age, history, randomness, etc.)
-    // Make a way to track and display that spread.
-    // Have multiple different viruses
-
     Population population;
     
     // Humans 0-999 with 100 health, age 5, and no bad history.
@@ -96,18 +92,32 @@ int main()
     
     int choice;
     
-    while (population.size() != 0 && quit == false) {
+    while (population.size() != 0) {
+        std::cout << "Current Population:\n";
+        std::cout << population.size() << "\n\n";    
+    
+        std::cout << "0: QUIT\n";
         std::cout << "1. Xelope-402\n";
         std::cout << "2. Oeurly-013\n";
         std::cout << "3. Kane-102\n";
         std::cout << "4. Yerlz-008\n";
         std::cout << "5. Zanapod-910\n\n\n";
-    
+
         std::cout << "Choose a virus to impose on the population (ENTER NUMBER): ";
         std::cin >> choice;
         
         if (choice == 1) {
-            
+            Virus virus1("Xelope-402", 20, 80, false);
+        } else if (choice == 2) {
+            Virus virus2("Oeurly-013", 40, 60, true);
+        } else if (choice == 3) {
+            Virus virus3("Kane-102", 60, 40, false);
+        } else if (choice == 4) {
+            Virus virus4("Yerlz-008", 80, 20, true);
+        } else if (choice == 5) {
+            Virus virus5("Zanapod-910", 100, 0, false);
+        } else if (choice == 0) {
+            break;
         }
     }
 
